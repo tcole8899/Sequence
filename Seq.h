@@ -28,8 +28,8 @@ void* Seq_addlo(T seq, void* val);
 // Seq_remhi removes the last element of the sequence
 // Seq_remlo removes the first element of the sequence
 // Both functions decrement the length value and return the removed value
-void* Seq_remhi(T seq, void* val);
-void* Seq_remlo(T seq, void* val);
+void* Seq_remhi(T seq);
+void* Seq_remlo(T seq);
 
 #undef T
 #endif
