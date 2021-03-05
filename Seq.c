@@ -51,22 +51,22 @@ void* Seq_addlo(T seq, void* val){
         seq->size++;
         seq->sequence = realloc(seq->sequence, (seq->size * sizeof(void*)));
     }
-    
+    seq->length++;
     for(int i = seq->length; i > 0; --i){
-        seq->sequence[i+1] = seq->sequence[i];
+        seq->sequence[i] = seq->sequence[i-1];
     }
     seq->sequence[0] = val;
     return seq->sequence[0];
 }
 
-void* Seq_remhi(T seq, void* val){
+void* Seq_remhi(T seq){
     seq->length--;
     void* removed = seq->sequence[seq->length];
     seq->sequence[seq->length] = NULL;
     return removed;
 }
 
-void* Seq_remlo(T seq, void* val){
+void* Seq_remlo(T seq){
     seq->length--;
     void* removed = seq->sequence[0];
     for(int i = 0; i < seq->length; i++){
