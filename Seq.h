@@ -1,10 +1,8 @@
 #ifndef SEQ_DEFINED
 #define SEQ_DEFINED
 
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct Seq_T T;
+#define T Seq_T
+typedef struct T *T;
 
 // New empty sequence. Hint estimates size of seq
 T Seq_new(int hint);   
@@ -33,4 +31,5 @@ void* Seq_addlo(T seq, void* val);
 void* Seq_remhi(T seq, void* val);
 void* Seq_remlo(T seq, void* val);
 
+#undef T
 #endif
