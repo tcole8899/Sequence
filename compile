@@ -1,0 +1,3 @@
+#!/bin/sh 
+
+gcc -Wall Seq_Test.c Seq.c -o run
